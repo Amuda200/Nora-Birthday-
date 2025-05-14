@@ -1,156 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday, My Queen!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #ffedf0;
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-            padding-top: 50px;
-            color: #444;
-            overflow: hidden;
-        }
-        h1 {
-            font-family: 'Dancing Script', cursive;
-            color: #ff69b4;
-            font-size: 3.5em;
-            animation: fadeIn 3s ease-in;
-        }
-        .message {
-            font-size: 1.6em;
-            color: #ff3366;
-            margin-top: 20px;
-            animation: fadeIn 4s ease-in;
-            line-height: 1.5;
-        }
-        .song {
-            color: #ff69b4;
-            font-size: 1.3em;
-            font-family: 'Roboto', sans-serif;
-            animation: fadeIn 6s ease-in;
-            margin-top: 20px;
-        }
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        .particles {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3em;
-            color: rgba(255, 0, 0, 0.5);
-            animation: particleAnimation 2s infinite alternate;
-        }
-        @keyframes particleAnimation {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-                transform: translate(10px, -10px);
-            }
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px 40px;
-            border-radius: 10px;
-            font-size: 2em;
-            animation: popupAnimation 1s ease-out forwards;
-        }
-        @keyframes popupAnimation {
-            0% {
-                opacity: 0;
-                transform: translate(-50%, -60%);
-            }
-            100% {
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
-        }
-        .close-btn {
-            font-size: 1.5em;
-            background: #ff3366;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        .close-btn:hover {
-            background: #ff69b4;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Lawrence!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #da1a32, #ffffff);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      background: #da1a32;
+      border: 5px solid #fff;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 600px;
+      margin: 100px auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      z-index: 2;
+      position: relative;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.3em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    .logo {
+      width: 100px;
+      margin-top: 20px;
+    }
+    .btn {
+      background-color: #fff;
+      color: #da1a32;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #ffc107;
+      color: #000;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Happy Birthday, My Queen! 👑✨</h1>
-        <div class="message">
-            <p>My Dearest My Queen,</p>
-            <p>Wishing you the happiest of birthdays! 🎂 May your day be filled with love, joy, and countless blessings. 🌹</p>
-            <p>Here's to another wonderful year ahead. I am so lucky to call you mine. 💕</p>
-        </div>
-        <div class="song">
-            <p>Enjoy this sweet song just for you, singing your name and age:</p>
-            <p id="song-text"></p>
-        </div>
-        <div class="particles">🎉✨💖✨🎉</div>
 
-        <!-- Popup -->
-        <div class="popup" id="birthdayPopup">
-            🎉🎂 Happy Birthday, My Queen! 🎂🎉
-            <button class="close-btn" onclick="closePopup()">Close</button>
-        </div>
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
 
-        <!-- YouTube Video Embed -->
-        <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/XS4ZTYn_2EY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-    </div>
+  <div class="container">
+    <h1>Happy Birthday, Lawrence!</h1>
+    <p>Wishing you a day filled with joy, laughter, and victories—just like an Arsenal win!</p>
+    <p>You're a true leader, Lawrence, and a top gunner—keep shining both in class and on match days!</p>
+    <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg" alt="Arsenal Logo" class="logo"/>
+    <br/>
+    <button class="btn" onclick="alert('Once a Gunner, always a Gunner, Lawrence!')">For the Arsenal!</button>
+  </div>
 
-    <script>
-        function singBirthday() {
-            const name = "My Queen"; // Using "My Queen"
-            const age = "20"; // Her age
-            const songText = `Happy Birthday to you, ${name}! 🎶🎂
-                             Happy ${age}th Birthday to you! 🎉
-                             Wishing you all the love and happiness today and always! 💖`;
-            document.getElementById('song-text').innerHTML = songText;
+  <!-- Audio -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-            const song = new SpeechSynthesisUtterance(songText);
-            song.pitch = 1;
-            song.rate = 1;
-            song.volume = 1;
-            speechSynthesis.speak(song);
+  <!-- Confetti Script -->
+  <script>
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    let confetti = [];
+    const colors = ['#fff', '#da1a32', '#ffc107'];
+
+    for (let i = 0; i < 300; i++) {
+      confetti.push({
+        x: Math.random() * width,
+        y: Math.random() * height - height,
+        r: Math.random() * 6 + 4,
+        d: Math.random() * 10 + 5,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        tilt: Math.random() * 10 - 10,
+        tiltAngleIncrement: Math.random() * 0.07 + 0.05,
+        tiltAngle: 0
+      });
+    }
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, width, height);
+      confetti.forEach(c => {
+        ctx.beginPath();
+        ctx.lineWidth = c.r;
+        ctx.strokeStyle = c.color;
+        ctx.moveTo(c.x + c.tilt + c.r / 2, c.y);
+        ctx.lineTo(c.x + c.tilt, c.y + c.tilt + c.r / 2);
+        ctx.stroke();
+      });
+
+      updateConfetti();
+    }
+
+    function updateConfetti() {
+      confetti.forEach((c, i) => {
+        c.tiltAngle += c.tiltAngleIncrement;
+        c.y += (Math.cos(c.d) + 3 + c.r / 2) / 2;
+        c.tilt = Math.sin(c.tiltAngle) * 15;
+
+        if (c.y > height) {
+          confetti[i] = {
+            ...c,
+            x: Math.random() * width,
+            y: -10,
+            tilt: Math.random() * 10 - 10
+          };
         }
+      });
+    }
 
-        function showPopup() {
-            document.getElementById("birthdayPopup").style.display = "block";
-        }
-
-        function closePopup() {
-            document.getElementById("birthdayPopup").style.display = "none";
-        }
-
-        window.onload = function() {
-            singBirthday();
-            setTimeout(showPopup, 2000); // Show the popup after 2 seconds
-        };
-    </script>
+    setInterval(drawConfetti, 20);
+    window.addEventListener('resize', () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+  </script>
 </body>
 </html>
